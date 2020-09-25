@@ -2,10 +2,14 @@
   margin: 0;
 }
 
+:root {
+  --netflix-background-color: #141414;
+}
+
 body {
   background-color: #111;
 }
 
-/* .app {
+.app {
   overflow-x: hidden;
-} */
+}
