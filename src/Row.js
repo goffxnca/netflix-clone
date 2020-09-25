@@ -10,7 +10,6 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
   useEffect(() => {
     axios.get(fetchUrl).then((resp) => {
       setMovies(resp.data.results);
-      console.table(resp.data.results);
     });
   }, [fetchUrl]);
 

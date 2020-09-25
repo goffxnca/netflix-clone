@@ -1,3 +1,7 @@
+.row {
+  padding-left: 50px;
+  color: white;
+}
 .row__posters {
   display: flex;
 }
@@ -8,10 +12,8 @@
   /* max-height: 100px; */
   object-fit: contain;
   transition: transform 450ms;
-}
-
-.row__posterLarge {
-  /* max-height: 200px !important; */
+  margin-right: 4px;
+  border-radius: 5px;
 }
 
 .row__poster:hover {
