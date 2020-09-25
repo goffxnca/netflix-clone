@@ -1,0 +1,31 @@
+.navbar {
+  position: fixed;
+  z-index: 200;
+  width: 100%;
+  transition: all ease-in-out 0.5s;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 10%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.navbar--dark {
+  background-color: var(--netflix-background-color);
+}
+
+.navbar__content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px;
+  align-items: center;
+}
+
+.navbar__logo img {
+  width: 100px;
+}
+
+.navbar__avatar img {
+  width: 40px;
+  border-radius: 5px;
+}

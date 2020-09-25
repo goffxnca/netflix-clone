@@ -12,7 +12,7 @@ function Banner() {
   const [movie, setmovie] = useState([]);
 
   const randomMovies = (movies) =>
-    movies[Math.floor(Math.random() * movies.length - 1)];
+    movies[Math.floor(Math.random() * (movies.length - 1))];
 
   useEffect(() => {
     axios.get(requests.fetchNetflixOriginals).then((resp) => {
