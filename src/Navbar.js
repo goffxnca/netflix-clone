@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
+import SearchIcon from "@material-ui/icons/Search";
+import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import ArrowDropDownSharpIcon from "@material-ui/icons/ArrowDropDownSharp";
 
 function Navbar() {
   const [navBgDark, setnavBgDark] = useState(false);
@@ -47,17 +51,17 @@ function Navbar() {
         </ul>
 
         <div className="navbar__secondary">
-          <span>SearchIcon</span>
-          <span>GiftIcon</span>
-          <span>NotificationIcon</span>
-          <span>Avatar</span>
-        </div>
+          <SearchIcon />
+          <CardGiftcardIcon />
+          <NotificationsIcon />
 
-        <div className="navbar__avatar">
-          <img
-            src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
-            alt=""
-          />
+          <div className="navbar__avatar">
+            <img
+              src="https://occ-0-1983-58.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABbU3UHUlkChqMS0UORybrasISolcRmk12xz3v84eycdFXFb0OpRQn-eS1DPXHPfnedUm2GsZylJOXOpNbDjSDMw.png?r=a41"
+              alt=""
+            />
+            <ArrowDropDownSharpIcon />
+          </div>
         </div>
       </div>
     </div>
