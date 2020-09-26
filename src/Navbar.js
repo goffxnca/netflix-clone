@@ -25,6 +25,34 @@ function Navbar() {
             alt="Netflix logo"
           />
         </div>
+
+        <ul className="navbar__primary">
+          <li>
+            <a href="#" className="navbar__primary--active">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#">TV Shows</a>
+          </li>
+          <li>
+            <a href="#">Movies</a>
+          </li>
+          <li>
+            <a href="#">Latest</a>
+          </li>
+          <li>
+            <a href="#">My List</a>
+          </li>
+        </ul>
+
+        <div className="navbar__secondary">
+          <span>SearchIcon</span>
+          <span>GiftIcon</span>
+          <span>NotificationIcon</span>
+          <span>Avatar</span>
+        </div>
+
         <div className="navbar__avatar">
           <img
             src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"

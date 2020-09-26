@@ -8,6 +8,7 @@
     rgba(0, 0, 0, 0.7) 10%,
     rgba(0, 0, 0, 0)
   );
+  height: 68px;
 }
 
 .navbar--dark {
@@ -16,16 +17,44 @@
 
 .navbar__content {
   display: flex;
-  justify-content: space-between;
-  padding: 10px 50px;
   align-items: center;
+  height: 100%;
+  padding: 0 60px;
 }
 
 .navbar__logo img {
-  width: 100px;
+  height: 25px;
+  margin-right: 25px;
 }
 
+.navbar__avatar {
+  position: absolute;
+  right: 20px;
+  top: 17px;
+}
 .navbar__avatar img {
   width: 40px;
   border-radius: 5px;
+}
+
+.navbar__primary {
+  display: flex;
+  padding: unset;
+}
+
+.navbar__primary li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.navbar__primary li a {
+  color: var(--netflix-text-seconary);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.navbar__primary--active {
+  color: white !important;
+  font-weight: 600 !important;
 }
