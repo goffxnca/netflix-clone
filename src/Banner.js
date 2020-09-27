@@ -54,6 +54,7 @@ function Banner() {
       </div>
 
       <div className="banner--fadeBottom"></div>
+      <div className="banner--fadeLeft"></div>
     </div>
   );
 }

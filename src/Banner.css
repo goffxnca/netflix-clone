@@ -14,6 +14,7 @@
   flex-direction: column;
   justify-content: center;
   flex: 0.4;
+  z-index: 2;
 }
 
 .banner__title {
@@ -77,4 +78,33 @@
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.banner--fadeLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70%;
+  background: -webkit-linear-gradient(
+    13deg,
+    rgba(0, 0, 0, 0.6) 0,
+    rgba(0, 0, 0, 0) 85%
+  );
+  background: -moz-
+    oldlinear-gradient(13deg, rgba(0, 0, 0, 0.6) 0, rgba(0, 0, 0, 0) 85%);
+  background: -o-linear-gradient(
+    13deg,
+    rgba(0, 0, 0, 0.6) 0,
+    rgba(0, 0, 0, 0) 85%
+  );
+  background: linear-gradient(
+    77deg,
+    rgba(0, 0, 0, 0.6) 0,
+    rgba(0, 0, 0, 0) 85%
+  );
+  right: 26.09%;
+  bottom: 0;
+  opacity: 1;
+  z-index: 1;
 }
