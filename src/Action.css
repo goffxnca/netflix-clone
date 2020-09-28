@@ -1,0 +1,20 @@
+.action {
+  margin: 0 2px;
+}
+.action > .MuiIconButton-root {
+  color: white !important;
+  background-color: rgba(42, 42, 42, 1) !important;
+  width: 1.5em;
+  height: 1.5em;
+  border: 1.5px solid gray;
+}
+
+.action > .MuiIconButton-root.action--solid {
+  background-color: white !important;
+  color: black !important;
+  border: 1.5px solid white;
+}
+
+.action > .MuiIconButton-root:hover {
+  border: 1.5px solid white;
+}
