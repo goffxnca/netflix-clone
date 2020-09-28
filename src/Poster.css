@@ -18,19 +18,29 @@
 .poster:hover .poster__content {
   visibility: visible;
 }
+
 .poster:hover {
   transition-delay: 0.1s;
   transition: transform 0.3s;
   transform: scale(1.6);
 }
 
+.poster.poster--large:hover {
+  transition-delay: 0.1s;
+  transition: transform 0.3s;
+  transform: scale(1.2);
+}
+
 .poster__img {
   object-fit: contain;
-
   cursor: pointer;
   object-fit: contain;
   max-height: 164px;
   max-width: 100%;
+}
+
+.poster--large .poster__img {
+  max-height: unset;
 }
 
 .poster__buttons > .MuiIconButton-root {

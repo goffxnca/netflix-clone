@@ -40,9 +40,9 @@ function Poster({ movie, isLargeRow }) {
   };
 
   return (
-    <div className="poster">
+    <div className={`poster ${isLargeRow && "poster--large"} `}>
       <img
-        className="poster__img"
+        className={`poster__img `}
         src={`${base_url}${
           isLargeRow ? movie.poster_path : movie.backdrop_path
         }`}
@@ -51,15 +51,11 @@ function Poster({ movie, isLargeRow }) {
       />
       <div className="poster__content">
         <div className="poster__actions">
-          <Action
-            Icon={PlayArrowIcon}
-            solidStyle={true}
-            tooltip="Add to My List"
-          />
+          <Action Icon={PlayArrowIcon} solidStyle={true} tooltip="" />
           <Action Icon={AddIcon} tooltip="Add to My List" />
-          <Action Icon={ThumbUpAltIcon} tooltip="" />
-          <Action Icon={ThumbDownIcon} />
-          <Action Icon={ExpandMoreIcon} />
+          <Action Icon={ThumbUpAltIcon} tooltip="I like this" />
+          <Action Icon={ThumbDownIcon} tooltip="Not for me" />
+          <Action Icon={ExpandMoreIcon} tooltip="More info" />
         </div>
         <div className="poster__info">Info</div>
       </div>
