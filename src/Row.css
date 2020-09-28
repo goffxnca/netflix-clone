@@ -5,6 +5,12 @@
   padding-bottom: 10px;
   overflow: visible;
 }
+
+.row__title {
+  color: var(--netflix-text-seconary);
+  font-size: var(--font-flex);
+  font-weight: 700;
+}
 .row__posters {
   display: flex;
 }

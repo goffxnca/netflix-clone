@@ -2,14 +2,11 @@ import { IconButton, Tooltip } from "@material-ui/core";
 import React from "react";
 import "./Action.css";
 
-function Action({ Icon, solidStyle = false }) {
+function Action({ Icon, tooltip, solidStyle = false }) {
   return (
     <div class="action">
-      <Tooltip title="Delete">
-        <IconButton
-          className={`${solidStyle && "action--solid"}`}
-          aria-label="delete"
-        >
+      <Tooltip title={tooltip} placement="top">
+        <IconButton className={`${solidStyle && "action--solid"}`}>
           <Icon />
         </IconButton>
       </Tooltip>

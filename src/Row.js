@@ -14,7 +14,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
 
   return (
     <div className="row">
-      <h2>{title}</h2>
+      <span className="row__title">{title}</span>
 
       <div className="row__posters">
         {movies.slice(0, 6).map((movie) => (

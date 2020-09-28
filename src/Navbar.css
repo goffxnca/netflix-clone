@@ -19,7 +19,8 @@
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 60px;
+  margin-left: 20px;
+  padding: 0 var(--box-flex);
 }
 
 .navbar__logo img {
@@ -30,8 +31,10 @@
 .navbar__avatar {
   display: flex;
   align-items: center;
+  margin-left: 20px;
 }
-.navbar__avatar img {
+
+.navbar__secondary img {
   width: 33px;
   border-radius: 5px;
   margin-right: 2px;
@@ -51,8 +54,8 @@
   color: var(--netflix-text-seconary);
   text-decoration: none;
   font-weight: 400;
-  font-size: 15px;
   transition: color ease 0.4s;
+  font-size: 1.6rem;
 }
 
 .navbar__primary li a:hover {
@@ -77,7 +80,43 @@
   flex: 1;
 }
 
-.navbar__secondary > * {
+.navbar__secondary > .MuiSvgIcon-root {
   margin-left: 20px;
+}
+
+.navbar__secondary .MuiSvgIcon-root {
+  font-size: 2.8rem;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar__primary li a {
+    font-size: 0.85vw !important;
+  }
+
+  .navbar__secondary > .MuiSvgIcon-root {
+    margin-left: 15px;
+  }
+
+  .navbar__secondary .MuiSvgIcon-root {
+    font-size: 2.1rem;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .navbar {
+    height: 40px;
+  }
+
+  .navbar__logo img {
+    height: 13px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .navbar__primary li a {
+    font-size: 1.2vw !important;
+  }
 }
