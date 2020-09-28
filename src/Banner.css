@@ -7,6 +7,7 @@
   display: flex;
   padding-left: 50px;
   position: relative;
+  z-index: -1;
 }
 
 .banner__content {
@@ -73,7 +74,7 @@
     rgba(37, 37, 37, 0.61),
     #111
   );
-  z-index: 100;
+  z-index: 1;
   position: absolute;
   bottom: 0;
   left: 0;
