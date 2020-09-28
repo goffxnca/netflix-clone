@@ -9,7 +9,7 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 const base_url = "https://image.tmdb.org/t/p/original";
 
 function Banner() {
-  const [movie, setmovie] = useState([]);
+  const [movie, setmovie] = useState({});
 
   const randomMovies = (movies) =>
     movies[Math.floor(Math.random() * (movies.length - 1))];
@@ -19,6 +19,13 @@ function Banner() {
       setmovie(randomMovies(resp.data.results));
     });
   }, []);
+
+  const truncate = (input) => {
+    const maxLength = 200;
+    return input.length > maxLength
+      ? `${input.substring(0, maxLength)}...`
+      : input;
+  };
 
   console.log(movie);
 
@@ -30,7 +37,7 @@ function Banner() {
       <div className="banner__content">
         <div className="banner__title">{movie?.original_name}</div>
         <div className="banner__description">
-          <span>{movie?.overview}</span>
+          <span>{truncate(movie?.overview ?? "")}</span>
         </div>
         <div className="banner__action">
           <Button
