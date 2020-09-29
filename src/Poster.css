@@ -47,7 +47,7 @@
 .poster__actions {
   display: flex;
   flex-direction: row !important;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .poster__actions .action:last-child {
