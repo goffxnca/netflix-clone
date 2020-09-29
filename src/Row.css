@@ -30,7 +30,7 @@
 }
 
 .react-multiple-carousel__arrow--left:hover::before {
-  content: "\e825" !important;
+  content: "\e824" !important;
 }
 
 .react-multiple-carousel__arrow--right {
