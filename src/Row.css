@@ -29,7 +29,7 @@
   content: none !important;
 }
 
-.react-multiple-carousel__arrow--left:hover::before {
+.row:hover .react-multiple-carousel__arrow--left::before {
   content: "\e824" !important;
 }
 
@@ -46,7 +46,7 @@
   content: none !important;
 }
 
-.react-multiple-carousel__arrow--right:hover::before {
+.row:hover .react-multiple-carousel__arrow--right::before {
   content: "\e825" !important;
 }
 
