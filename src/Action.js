@@ -4,7 +4,7 @@ import "./Action.css";
 
 function Action({ Icon, tooltip, solidStyle = false }) {
   return (
-    <div class="action">
+    <div className="action">
       <Tooltip title={tooltip} placement="top">
         <IconButton className={`${solidStyle && "action--solid"}`}>
           <Icon />

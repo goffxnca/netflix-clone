@@ -27,8 +27,6 @@ function Banner() {
       : input;
   };
 
-  console.log(movie);
-
   return (
     <div
       className="banner"
