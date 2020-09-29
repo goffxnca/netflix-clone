@@ -1,27 +1,24 @@
 .poster {
   flex: 1 1 auto;
   background-color: #111;
-  transition: transform 0.1s;
-
-  transition-timing-function: ease-out;
   margin-right: 10px;
+
+  transition: all 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.poster__content {
+  /* visibility: hidden; */
 }
 
 .poster:hover {
-  transition-delay: 0.1s;
-  transition: transform 0.3s;
-  transform: scale(1.6);
-  box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
+  /* transition: transform 0.3s; */
+  transform: scale(1.4);
+  /* transition-delay: 0.5s; */
 }
 
 .poster:hover .poster__content {
   visibility: visible;
-}
-
-.poster:hover {
-  transition-delay: 0.1s;
-  transition: transform 0.3s;
-  transform: scale(1.6);
 }
 
 .poster.poster--large:hover {
@@ -34,9 +31,9 @@
   object-fit: contain;
   cursor: pointer;
   object-fit: contain;
-  max-height: 164px;
-  max-width: 100%;
-  border-radius: 5px;
+  max-height: 250px;
+  width: 100%;
+  border-radius: 8px;
 }
 
 .poster--large .poster__img {
@@ -45,10 +42,6 @@
 
 .poster__buttons > .MuiIconButton-root {
   color: white !important;
-}
-
-.poster__content {
-  visibility: hidden;
 }
 
 .poster__actions {

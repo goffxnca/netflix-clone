@@ -5,13 +5,14 @@ import requests from "./requests";
 
 function RowList() {
   return (
-    <div class="rowList">
+    <div className="rowList">
       <Row
         title="Netflix Originals"
         fetchUrl={requests.fetchNetflixOriginals}
         isLargeRow={true}
       />
       <Row title="Trendings Now" fetchUrl={requests.fetchTrending} />
+
       <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
       <Row title="Action" fetchUrl={requests.fetchActionMovies} />
       <Row title="Comedy" fetchUrl={requests.fetchComedyMovies} />

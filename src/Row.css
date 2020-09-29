@@ -2,13 +2,54 @@
   color: white;
   padding-bottom: 10px;
   overflow: visible;
+  margin-bottom: 2vw;
 }
 
 .row__title {
   color: var(--netflix-text-seconary);
   font-size: var(--font-flex);
   font-weight: 700;
+  margin-bottom: 25px;
+  padding: 0 4%;
 }
 .row__posters {
   display: flex;
+}
+
+.react-multiple-carousel__arrow--left {
+  height: 100% !important;
+  left: 0 !important;
+  border-radius: 0 !important;
+  width: var(--box-flex);
+}
+
+.react-multiple-carousel__arrow--left::before {
+  font-size: 2vw !important;
+  font-weight: 900;
+  content: none !important;
+}
+
+.react-multiple-carousel__arrow--left:hover::before {
+  content: "\e825" !important;
+}
+
+.react-multiple-carousel__arrow--right {
+  height: 100% !important;
+  right: 0 !important;
+  border-radius: 0 !important;
+  width: var(--box-flex);
+}
+
+.react-multiple-carousel__arrow--right::before {
+  font-size: 2vw !important;
+  font-weight: 900;
+  content: none !important;
+}
+
+.react-multiple-carousel__arrow--right:hover::before {
+  content: "\e825" !important;
+}
+
+.react-multi-carousel-list {
+  overflow: visible !important;
 }

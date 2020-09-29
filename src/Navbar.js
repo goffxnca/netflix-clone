@@ -11,7 +11,6 @@ function Navbar() {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
-        console.log(window.scrollY);
         setnavBgDark(true);
       } else setnavBgDark(false);
     });

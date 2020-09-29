@@ -50,14 +50,14 @@ function Poster({ movie, isLargeRow }) {
         onClick={() => handleClickPoster(movie)}
       />
       <div className="poster__content">
-        <div className="poster__actions">
+        {/* <div className="poster__actions">
           <Action Icon={PlayArrowIcon} solidStyle={true} tooltip="" />
           <Action Icon={AddIcon} tooltip="Add to My List" />
           <Action Icon={ThumbUpAltIcon} tooltip="I like this" />
           <Action Icon={ThumbDownIcon} tooltip="Not for me" />
           <Action Icon={ExpandMoreIcon} tooltip="More info" />
-        </div>
-        <div className="poster__info">Info</div>
+        </div> */}
+        {/* <div className="poster__info">Info</div> */}
       </div>
     </div>
   );
