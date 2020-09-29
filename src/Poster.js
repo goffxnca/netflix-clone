@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import movieTrailer from "movie-trailer";
+import Youtube from "react-youtube";
 import "./Poster.css";
 import Action from "./Action";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
@@ -12,42 +13,67 @@ const base_url = "https://image.tmdb.org/t/p/w500";
 
 function Poster({ movie, isLargeRow }) {
   const [youtubeTrailerId, setYoutubeTrailerId] = useState("");
+  const [showTrailer, setShowTrailer] = useState(false);
+  let timer = null;
 
-  const handleClickPoster = (movie) => {
-    if (youtubeTrailerId) {
-      setYoutubeTrailerId("");
-    } else {
+  const handleMouseEnter = (movie) => {
+    timer = setTimeout(() => {
       //Find movie trailer from youtube
       const movieName = movie?.name || movie?.orinal_title || movie?.title;
       movieTrailer(movieName)
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           const trailerId = urlParams.get("v");
-          setYoutubeTrailerId(trailerId);
+
+          if (timer !== null) {
+            setYoutubeTrailerId(trailerId);
+            setShowTrailer(true);
+            cleanTimer();
+          }
         })
         .catch((error) => {
           console.log(error);
         });
-    }
+    }, 1000);
+  };
+
+  const handleMouseOut = (movie) => {
+    cleanTimer();
+    setShowTrailer(false);
+    setYoutubeTrailerId("");
+  };
+
+  const cleanTimer = () => {
+    clearTimeout(timer);
+    timer = null;
   };
 
   const opts = {
-    height: "390",
+    height: "200px",
     width: "100%",
     playerVars: {
-      // autoplay: 1,
+      autoplay: 1,
+      controls: 1,
+      // showinfo: 0,
+      modestbranding: 1,
+      fs: 0,
+      // iv_load_policy: 3,
+      // rel: 1,
     },
   };
 
   return (
-    <div className={`poster ${isLargeRow && "poster--large"} `}>
+    <div
+      className={`poster ${isLargeRow && "poster--large"}`}
+      onMouseEnter={() => handleMouseEnter(movie)}
+      onMouseLeave={() => handleMouseOut(movie)}
+    >
       <img
-        className={`poster__img `}
+        className="poster__img"
         src={`${base_url}${
           isLargeRow ? movie.poster_path : movie.backdrop_path
         }`}
         alt={movie.original_name}
-        onClick={() => handleClickPoster(movie)}
       />
       <div className="poster__content">
         {/* <div className="poster__actions">
@@ -58,6 +84,12 @@ function Poster({ movie, isLargeRow }) {
           <Action Icon={ExpandMoreIcon} tooltip="More info" />
         </div> */}
         {/* <div className="poster__info">Info</div> */}
+      </div>
+
+      <div className="poster__trailer">
+        {showTrailer && youtubeTrailerId && (
+          <Youtube videoId={youtubeTrailerId} opts={opts} />
+        )}
       </div>
     </div>
   );

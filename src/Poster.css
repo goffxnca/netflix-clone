@@ -2,9 +2,9 @@
   flex: 1 1 auto;
   background-color: #111;
   margin-right: 10px;
-
   transition: all 0.3s;
   transition-timing-function: ease-out;
+  z-index: 1;
 }
 
 .poster__content {
@@ -52,4 +52,11 @@
 
 .poster__actions .action:last-child {
   margin-left: auto !important;
+}
+
+.poster__trailer {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
