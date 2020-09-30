@@ -18,7 +18,6 @@ function Poster({ movie, isLargeRow }) {
   let timer = null;
 
   const handleMouseEnter = (movie) => {
-    console.log(movie);
     timer = setTimeout(() => {
       //Find movie trailer from youtube
       const movieName =
@@ -38,7 +37,7 @@ function Poster({ movie, isLargeRow }) {
           }
         })
         .catch((error) => {
-          console.log(error);
+          cleanTimer();
         });
     }, 1000);
   };
