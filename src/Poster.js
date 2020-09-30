@@ -12,14 +12,20 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 const base_url = "https://image.tmdb.org/t/p/w500";
 
 function Poster({ movie, isLargeRow }) {
-  const [youtubeTrailerId, setYoutubeTrailerId] = useState("");
+  const [youtubeTrailerId, setYoutubeTrailerId] = useState();
   const [showTrailer, setShowTrailer] = useState(false);
+  const [youtubeBufferLoaded, setyoutubeBufferLoaded] = useState(false);
   let timer = null;
 
   const handleMouseEnter = (movie) => {
+    console.log(movie);
     timer = setTimeout(() => {
       //Find movie trailer from youtube
-      const movieName = movie?.name || movie?.orinal_title || movie?.title;
+      const movieName =
+        movie?.name ||
+        movie?.original_name ||
+        movie?.orinal_title ||
+        movie?.title;
       movieTrailer(movieName)
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
@@ -41,6 +47,7 @@ function Poster({ movie, isLargeRow }) {
     cleanTimer();
     setShowTrailer(false);
     setYoutubeTrailerId("");
+    setyoutubeBufferLoaded(false);
   };
 
   const cleanTimer = () => {
@@ -48,17 +55,16 @@ function Poster({ movie, isLargeRow }) {
     timer = null;
   };
 
-  const opts = {
+  // Only play youtube when ready (buffer loaded) to hide youtube embeded preloader
+  const onYoutubeReady = () => {
+    setyoutubeBufferLoaded(true);
+  };
+
+  const videoConfig = {
     height: "200px",
     width: "100%",
     playerVars: {
       autoplay: 1,
-      controls: 1,
-      // showinfo: 0,
-      modestbranding: 1,
-      fs: 0,
-      // iv_load_policy: 3,
-      // rel: 1,
     },
   };
 
@@ -86,9 +92,17 @@ function Poster({ movie, isLargeRow }) {
         {/* <div className="poster__info">Info</div> */}
       </div>
 
-      <div className="poster__trailer">
+      <div
+        className="poster__trailer"
+        style={{ zIndex: youtubeBufferLoaded ? 99 : -1 }}
+      >
         {showTrailer && youtubeTrailerId && (
-          <Youtube videoId={youtubeTrailerId} opts={opts} />
+          <Youtube
+            videoId={youtubeTrailerId}
+            opts={videoConfig}
+            className="poster__youtubeIFrame"
+            onPlay={onYoutubeReady}
+          />
         )}
       </div>
     </div>

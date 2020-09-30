@@ -5,6 +5,7 @@
   transition: all 0.3s;
   transition-timing-function: ease-out;
   z-index: 1;
+  cursor: pointer;
 }
 
 .poster__content {
@@ -21,11 +22,11 @@
   visibility: visible;
 }
 
-.poster.poster--large:hover {
+/* .poster.poster--large:hover {
   transition-delay: 0.1s;
   transition: transform 0.3s;
   transform: scale(1.2);
-}
+} */
 
 .poster__img {
   object-fit: contain;
@@ -36,8 +37,37 @@
   border-radius: 8px;
 }
 
+.poster__trailer {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  pointer-events: none;
+}
+
 .poster--large .poster__img {
   max-height: unset;
+}
+
+.poster--large .poster__youtubeIFrame {
+  width: 280%;
+  position: absolute;
+  top: -10%;
+  left: -87%;
+  height: 120%;
+}
+
+.poster__youtubeIFrame {
+  border-radius: 10px !important;
+  position: absolute;
+  height: 300px;
+  width: 150%;
+  left: -25%;
+  top: -50%;
 }
 
 .poster__buttons > .MuiIconButton-root {
@@ -52,11 +82,4 @@
 
 .poster__actions .action:last-child {
   margin-left: auto !important;
-}
-
-.poster__trailer {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
