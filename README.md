@@ -18,7 +18,7 @@ The objective of this project is to build a React Netflix clone with the followi
 ![Twitter Clone Screenshot](./docs/netflix-clone-gif3.gif)
 ![Twitter Clone Screenshot](./docs/netflix-clone-gif4.gif)
 
-## 🌐 [Live Preview](https://netflix-clone-22611.web.app//)
+## 🌐 [Live Preview](https://netflixgoff.web.app//)
 
 ## 🛠️ Tech stack
 
